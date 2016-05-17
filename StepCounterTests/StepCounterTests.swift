@@ -11,9 +11,25 @@ import XCTest
 
 class StepCounterTests: XCTestCase {
     
+    lazy var walks: [Walk] = {
+        let path = NSBundle.mainBundle().pathForResource("Walks", ofType: "plist")
+        let arrayOfDicts = NSArray(contentsOfFile: path!)!
+        var array = [Walk]()
+        for i in 0..<arrayOfDicts.count {
+            let walk = Walk.convertDictToWalk(arrayOfDicts[i] as! [String : AnyObject])
+            array.append(walk)
+        }
+        return array as Array
+    }()
+    
+    let tableViewController = SessionsTableViewController()
+    
+    
+ 
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        tableViewController.loadSavedHistoryData()
     }
     
     override func tearDown() {
@@ -21,16 +37,16 @@ class StepCounterTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testWalkArrayHasItems() {
+        XCTAssertGreaterThan(walks.count, 0, "The Walks don't upload")
+        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testHistoryLoad() {
+        let storedHistoryPlist = tableViewController.storedHistoryPlist
+        XCTAssertGreaterThan(storedHistoryPlist.count, 0, "The History Porperty has documents")
     }
+    
+    
     
 }

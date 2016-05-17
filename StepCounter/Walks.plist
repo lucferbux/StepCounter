@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>3 Km</string>
+		<key>goal</key>
+		<integer>3</integer>
+		<key>info</key>
+		<string>With a 3 km walk, an average person could burn around 170 calories, you are half of the average recommended walking distance</string>
+		<key>imageName</key>
+		<string>3.png</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>5 Km</string>
+		<key>goal</key>
+		<integer>5</integer>
+		<key>info</key>
+		<string>With a 5 km walk, an average person could burn around 300 calories, you are close to the average recommended walking distance</string>
+		<key>imageName</key>
+		<string>5.png</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>7 Km</string>
+		<key>goal</key>
+		<integer>7</integer>
+		<key>info</key>
+		<string>With a 7 km walk, an average person could burn around 420 calories, this is a good amount exercise for a soft training.</string>
+		<key>imageName</key>
+		<string>7.png</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>10 Km</string>
+		<key>goal</key>
+		<integer>10</integer>
+		<key>info</key>
+		<string>With a 10 km walk, an average person could burn around 600 calories, you have reached a great goal</string>
+		<key>imageName</key>
+		<string>10.png</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>13 Km</string>
+		<key>goal</key>
+		<integer>13</integer>
+		<key>info</key>
+		<string>With a 13 km walk, an average person could burn around 780 calories, great job, you are making an incredible goal</string>
+		<key>imageName</key>
+		<string>13.png</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>More than 17 km</string>
+		<key>goal</key>
+		<integer>17</integer>
+		<key>info</key>
+		<string>More than 17km is an incredible mark, rest a bit, take some food and keep going!</string>
+		<key>imageName</key>
+		<string>0.png</string>
+	</dict>
+</array>
+</plist>

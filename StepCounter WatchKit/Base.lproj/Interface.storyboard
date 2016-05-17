@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p1f-C5-De5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--StepCounter-->
+        <scene sceneID="hjq-wt-eSE">
+            <objects>
+                <controller identifier="MainInterfaceController" title="StepCounter" id="p1f-C5-De5" customClass="InterfaceController" customModule="StepCounter_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="zUw-bz-yhS">
+                            <items>
+                                <tableRow identifier="walkRow" id="pcs-XV-4Jk" customClass="WalkRowController" customModule="StepCounter_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="52" alignment="left" layout="vertical" id="A2s-75-rWn">
+                                        <items>
+                                            <group width="1" height="0.90000000000000002" alignment="left" id="nWj-dU-m4U">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="walkTitle" textAlignment="left" numberOfLines="0" id="QvZ-vH-11Y"/>
+                                                    <label alignment="right" verticalAlignment="center" text="🌟" id="NDk-Gw-hia"/>
+                                                </items>
+                                                <edgeInsets key="margins" left="8" right="8" top="0.0" bottom="0.0"/>
+                                            </group>
+                                            <group width="1" height="0.14999999999999999" alignment="left" verticalAlignment="bottom" id="yla-Rg-Qrs">
+                                                <items>
+                                                    <group width="0.22" height="1" alignment="left" id="rkc-qQ-mYk">
+                                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="progressGroup" destination="rkc-qQ-mYk" id="V6x-Yd-lbR"/>
+                                        <outlet property="starLabel" destination="NDk-Gw-hia" id="vgl-Hd-YUh"/>
+                                        <outlet property="titleLabel" destination="QvZ-vH-11Y" id="dPi-Vh-w9N"/>
+                                        <segue destination="yyX-Gh-RGs" kind="push" id="qOS-ex-w6e"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="walkTable" destination="zUw-bz-yhS" id="WYB-gF-0RE"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="240" y="357"/>
+        </scene>
+        <!--Walk-->
+        <scene sceneID="2K9-ke-vyk">
+            <objects>
+                <controller identifier="PageInterfaceController" title="Walk" hidesWhenLoading="NO" id="yyX-Gh-RGs" customClass="PageInterfaceController" customModule="StepCounter_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.40000000000000002" alignment="left" backgroundImage="0" layout="vertical" id="Hd2-En-I30">
+                            <items>
+                                <label alignment="center" verticalAlignment="bottom" text="nn.n km" id="0Nh-Fe-tr8">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <group width="1" height="5" alignment="left" verticalAlignment="bottom" id="1JC-0e-eof">
+                                    <items>
+                                        <group width="0.22" height="1" alignment="left" id="Nez-Cz-iIb">
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="FsX-JM-XHs">
+                            <items>
+                                <label alignment="left" verticalAlignment="bottom" text="Go, go go!" id="3YI-xH-rZg">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                                <group width="1" alignment="left" id="Jy5-WZ-Han">
+                                    <items>
+                                        <imageView alignment="left" verticalAlignment="bottom" image="distance" id="4W9-QE-irT"/>
+                                        <label alignment="left" verticalAlignment="bottom" text="nnn.n" id="5g4-aI-sux">
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                        </label>
+                                        <label alignment="left" verticalAlignment="bottom" text=" km" id="kXk-u4-q4T">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="Hvx-om-FdX">
+                            <items>
+                                <label alignment="left" verticalAlignment="bottom" text=" It starts with 1 step" id="6gx-Ch-V3u">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                                <group width="1" alignment="left" id="M7z-Bf-F06">
+                                    <items>
+                                        <imageView alignment="left" verticalAlignment="bottom" image="steps" id="Lgv-fI-103"/>
+                                        <label alignment="left" verticalAlignment="bottom" text="nnnnnn" id="qKh-Bw-jOH">
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                        </label>
+                                        <label alignment="left" verticalAlignment="bottom" text=" steps" id="JPz-sa-yXL">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Uoq-8b-Rff">
+                            <items>
+                                <label alignment="left" verticalAlignment="bottom" text="n" id="XnD-PV-VyS">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" verticalAlignment="bottom" text=" finished" id="Ht4-IW-sIG">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Vcn-ws-zmy">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Total" id="dMu-si-zlL">
+                                    <fontDescription key="font" type="system" pointSize="24"/>
+                                </label>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" id="vWh-Cf-ymS">
+                                    <items>
+                                        <imageView alignment="left" verticalAlignment="center" image="distance" id="yrJ-iW-2T1"/>
+                                        <imageView alignment="left" verticalAlignment="center" image="steps" id="gk3-rt-QOI"/>
+                                    </items>
+                                </group>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" id="V12-mj-pUl">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="bottom" text="nnnnnn" id="fS4-fP-MuM">
+                                            <fontDescription key="font" type="system" pointSize="11"/>
+                                        </label>
+                                        <label alignment="left" text="nn.n km" id="ePQ-IM-hC2">
+                                            <fontDescription key="font" type="system" pointSize="11"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="GO0-eJ-JzT">
+                        <items>
+                            <menuItem title="Send Data" icon="accept" id="75L-9c-9ab">
+                                <connections>
+                                    <action selector="sendHistory" destination="yyX-Gh-RGs" id="Dww-20-IUf"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="completionsLabel" destination="XnD-PV-VyS" id="qw0-dx-CJd"/>
+                        <outlet property="distanceLabel" destination="ePQ-IM-hC2" id="Lwh-TW-YWq"/>
+                        <outlet property="goalLabel" destination="0Nh-Fe-tr8" id="zQv-td-VP5"/>
+                        <outlet property="progressGroup" destination="Nez-Cz-iIb" id="Zdg-Am-TfC"/>
+                        <outlet property="stepsLabel" destination="fS4-fP-MuM" id="zdg-KY-J5W"/>
+                        <outlet property="topGroup" destination="Hd2-En-I30" id="UpV-UQ-gyY"/>
+                        <outlet property="totalDistanceLabel" destination="5g4-aI-sux" id="gFb-5e-cPP"/>
+                        <outlet property="totalDistanceMsgLabel" destination="3YI-xH-rZg" id="TXb-63-6f9"/>
+                        <outlet property="totalDistanceUnitLabel" destination="kXk-u4-q4T" id="ipF-E1-vyC"/>
+                        <outlet property="totalStepsLabel" destination="qKh-Bw-jOH" id="NbM-xF-BXf"/>
+                        <outlet property="totalStepsMsgLabel" destination="6gx-Ch-V3u" id="maf-7Z-9ym"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="548" y="369.25"/>
+        </scene>
+    </scenes>
+</document>

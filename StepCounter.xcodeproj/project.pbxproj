@@ -8,13 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		371F08601CE0FACD006EDE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F085F1CE0FACD006EDE77 /* AppDelegate.swift */; };
-		371F08621CE0FACD006EDE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F08611CE0FACD006EDE77 /* ViewController.swift */; };
 		371F08651CE0FACD006EDE77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371F08631CE0FACD006EDE77 /* Main.storyboard */; };
 		371F08681CE0FACD006EDE77 /* StepCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 371F08661CE0FACD006EDE77 /* StepCounter.xcdatamodeld */; };
 		371F086A1CE0FACD006EDE77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371F08691CE0FACD006EDE77 /* Assets.xcassets */; };
 		371F086D1CE0FACD006EDE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371F086B1CE0FACD006EDE77 /* LaunchScreen.storyboard */; };
 		371F08781CE0FACD006EDE77 /* StepCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F08771CE0FACD006EDE77 /* StepCounterTests.swift */; };
 		371F08831CE0FACD006EDE77 /* StepCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F08821CE0FACD006EDE77 /* StepCounterUITests.swift */; };
+		371F08911CE0FB08006EDE77 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F08901CE0FB08006EDE77 /* ProgressBarView.swift */; };
+		371F089B1CE1007E006EDE77 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F089A1CE1007E006EDE77 /* SessionData.swift */; };
+		371F089F1CE10240006EDE77 /* SessionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F089E1CE10240006EDE77 /* SessionsTableViewController.swift */; };
+		371F08A11CE10548006EDE77 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F08A01CE10548006EDE77 /* HistoryTableViewController.swift */; };
+		371F08A31CE1070A006EDE77 /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F08A21CE1070A006EDE77 /* WalkViewController.swift */; };
+		377D20C61CE1479100F80559 /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D20C41CE1479100F80559 /* Walk.swift */; };
+		377D20C71CE1479100F80559 /* Walks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377D20C51CE1479100F80559 /* Walks.plist */; };
+		37AE11441CE1ECF900E20ED1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AE11421CE1ECF900E20ED1 /* Interface.storyboard */; };
+		37AE11461CE1ECF900E20ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE11451CE1ECF900E20ED1 /* Assets.xcassets */; };
+		37AE114D1CE1ECF900E20ED1 /* StepCounter WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 37AE114C1CE1ECF900E20ED1 /* StepCounter WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		37AE11541CE1ECF900E20ED1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE11531CE1ECF900E20ED1 /* InterfaceController.swift */; };
+		37AE11561CE1ECF900E20ED1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE11551CE1ECF900E20ED1 /* ExtensionDelegate.swift */; };
+		37AE115A1CE1ECF900E20ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AE11591CE1ECF900E20ED1 /* Assets.xcassets */; };
+		37AE115E1CE1ECF900E20ED1 /* StepCounter WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 37AE11401CE1ECF900E20ED1 /* StepCounter WatchKit.app */; };
+		37AE11681CE1F9F200E20ED1 /* PedometerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE11671CE1F9F200E20ED1 /* PedometerData.swift */; };
+		37AE116A1CE1FEF700E20ED1 /* WalkRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE11691CE1FEF700E20ED1 /* WalkRowController.swift */; };
+		37AE116C1CE1FF7D00E20ED1 /* PageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE116B1CE1FF7D00E20ED1 /* PageInterfaceController.swift */; };
+		37AE116D1CE2001400E20ED1 /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D20C41CE1479100F80559 /* Walk.swift */; };
+		37AE116F1CE204AF00E20ED1 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE116E1CE204AF00E20ED1 /* Calendar.swift */; };
+		37AE11701CE209B100E20ED1 /* Walks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377D20C51CE1479100F80559 /* Walks.plist */; };
+		37AE11741CE2374F00E20ED1 /* SessionDataXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE11731CE2374F00E20ED1 /* SessionDataXML.swift */; };
+		37AE11761CE33CD600E20ED1 /* HistoryData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37AE11751CE33CD600E20ED1 /* HistoryData.plist */; };
+		37AE11771CE3513600E20ED1 /* HistoryData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37AE11751CE33CD600E20ED1 /* HistoryData.plist */; };
+		37AE11781CE3515C00E20ED1 /* SessionDataXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE11731CE2374F00E20ED1 /* SessionDataXML.swift */; };
+		37AE11791CE3548500E20ED1 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F089A1CE1007E006EDE77 /* SessionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +56,50 @@
 			remoteGlobalIDString = 371F085B1CE0FACD006EDE77;
 			remoteInfo = StepCounter;
 		};
+		37AE114E1CE1ECF900E20ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371F08541CE0FACD006EDE77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37AE114B1CE1ECF900E20ED1;
+			remoteInfo = "StepCounter WatchKit Extension";
+		};
+		37AE115C1CE1ECF900E20ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371F08541CE0FACD006EDE77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37AE113F1CE1ECF900E20ED1;
+			remoteInfo = "StepCounter WatchKit";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37AE11621CE1ECF900E20ED1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				37AE114D1CE1ECF900E20ED1 /* StepCounter WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37AE11661CE1ECF900E20ED1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				37AE115E1CE1ECF900E20ED1 /* StepCounter WatchKit.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		371F085C1CE0FACD006EDE77 /* StepCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371F085F1CE0FACD006EDE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		371F08611CE0FACD006EDE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		371F08641CE0FACD006EDE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		371F08671CE0FACD006EDE77 /* StepCounter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StepCounter.xcdatamodel; sourceTree = "<group>"; };
 		371F08691CE0FACD006EDE77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +111,29 @@
 		371F087E1CE0FACD006EDE77 /* StepCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		371F08821CE0FACD006EDE77 /* StepCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterUITests.swift; sourceTree = "<group>"; };
 		371F08841CE0FACD006EDE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		371F08901CE0FB08006EDE77 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		371F089A1CE1007E006EDE77 /* SessionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		371F089E1CE10240006EDE77 /* SessionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsTableViewController.swift; sourceTree = "<group>"; };
+		371F08A01CE10548006EDE77 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		371F08A21CE1070A006EDE77 /* WalkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkViewController.swift; sourceTree = "<group>"; };
+		377D20C41CE1479100F80559 /* Walk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Walk.swift; path = StepCounter/Walk.swift; sourceTree = "<group>"; };
+		377D20C51CE1479100F80559 /* Walks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Walks.plist; path = StepCounter/Walks.plist; sourceTree = "<group>"; };
+		37AE11401CE1ECF900E20ED1 /* StepCounter WatchKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StepCounter WatchKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE11431CE1ECF900E20ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		37AE11451CE1ECF900E20ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37AE11471CE1ECF900E20ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37AE114C1CE1ECF900E20ED1 /* StepCounter WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "StepCounter WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37AE11521CE1ECF900E20ED1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		37AE11531CE1ECF900E20ED1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		37AE11551CE1ECF900E20ED1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		37AE11591CE1ECF900E20ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37AE115B1CE1ECF900E20ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37AE11671CE1F9F200E20ED1 /* PedometerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedometerData.swift; sourceTree = "<group>"; };
+		37AE11691CE1FEF700E20ED1 /* WalkRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkRowController.swift; sourceTree = "<group>"; };
+		37AE116B1CE1FF7D00E20ED1 /* PageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageInterfaceController.swift; sourceTree = "<group>"; };
+		37AE116E1CE204AF00E20ED1 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		37AE11731CE2374F00E20ED1 /* SessionDataXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDataXML.swift; sourceTree = "<group>"; };
+		37AE11751CE33CD600E20ED1 /* HistoryData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = HistoryData.plist; path = StepCounter/HistoryData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +158,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37AE11491CE1ECF900E20ED1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +174,9 @@
 				371F085E1CE0FACD006EDE77 /* StepCounter */,
 				371F08761CE0FACD006EDE77 /* StepCounterTests */,
 				371F08811CE0FACD006EDE77 /* StepCounterUITests */,
+				377D20C31CE1477200F80559 /* Shared */,
+				37AE11411CE1ECF900E20ED1 /* StepCounter WatchKit */,
+				37AE11501CE1ECF900E20ED1 /* StepCounter WatchKit Extension */,
 				371F085D1CE0FACD006EDE77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +187,8 @@
 				371F085C1CE0FACD006EDE77 /* StepCounter.app */,
 				371F08731CE0FACD006EDE77 /* StepCounterTests.xctest */,
 				371F087E1CE0FACD006EDE77 /* StepCounterUITests.xctest */,
+				37AE11401CE1ECF900E20ED1 /* StepCounter WatchKit.app */,
+				37AE114C1CE1ECF900E20ED1 /* StepCounter WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,7 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				371F085F1CE0FACD006EDE77 /* AppDelegate.swift */,
-				371F08611CE0FACD006EDE77 /* ViewController.swift */,
+				371F08901CE0FB08006EDE77 /* ProgressBarView.swift */,
+				371F08991CE0FF96006EDE77 /* Model */,
+				371F08981CE0FF8D006EDE77 /* Controllers */,
 				371F08631CE0FACD006EDE77 /* Main.storyboard */,
 				371F08691CE0FACD006EDE77 /* Assets.xcassets */,
 				371F086B1CE0FACD006EDE77 /* LaunchScreen.storyboard */,
@@ -128,6 +227,69 @@
 			path = StepCounterUITests;
 			sourceTree = "<group>";
 		};
+		371F08981CE0FF8D006EDE77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				371F089E1CE10240006EDE77 /* SessionsTableViewController.swift */,
+				371F08A01CE10548006EDE77 /* HistoryTableViewController.swift */,
+				371F08A21CE1070A006EDE77 /* WalkViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		371F08991CE0FF96006EDE77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				371F089A1CE1007E006EDE77 /* SessionData.swift */,
+				37AE11731CE2374F00E20ED1 /* SessionDataXML.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		377D20C31CE1477200F80559 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				377D20C41CE1479100F80559 /* Walk.swift */,
+				377D20C51CE1479100F80559 /* Walks.plist */,
+				37AE11751CE33CD600E20ED1 /* HistoryData.plist */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		37AE11411CE1ECF900E20ED1 /* StepCounter WatchKit */ = {
+			isa = PBXGroup;
+			children = (
+				37AE11421CE1ECF900E20ED1 /* Interface.storyboard */,
+				37AE11451CE1ECF900E20ED1 /* Assets.xcassets */,
+				37AE11471CE1ECF900E20ED1 /* Info.plist */,
+			);
+			path = "StepCounter WatchKit";
+			sourceTree = "<group>";
+		};
+		37AE11501CE1ECF900E20ED1 /* StepCounter WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				37AE11671CE1F9F200E20ED1 /* PedometerData.swift */,
+				37AE116E1CE204AF00E20ED1 /* Calendar.swift */,
+				37AE11691CE1FEF700E20ED1 /* WalkRowController.swift */,
+				37AE11531CE1ECF900E20ED1 /* InterfaceController.swift */,
+				37AE116B1CE1FF7D00E20ED1 /* PageInterfaceController.swift */,
+				37AE11591CE1ECF900E20ED1 /* Assets.xcassets */,
+				37AE115B1CE1ECF900E20ED1 /* Info.plist */,
+				37AE11551CE1ECF900E20ED1 /* ExtensionDelegate.swift */,
+				37AE11511CE1ECF900E20ED1 /* Supporting Files */,
+			);
+			path = "StepCounter WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		37AE11511CE1ECF900E20ED1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37AE11521CE1ECF900E20ED1 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,10 +300,12 @@
 				371F08581CE0FACD006EDE77 /* Sources */,
 				371F08591CE0FACD006EDE77 /* Frameworks */,
 				371F085A1CE0FACD006EDE77 /* Resources */,
+				37AE11661CE1ECF900E20ED1 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				37AE115D1CE1ECF900E20ED1 /* PBXTargetDependency */,
 			);
 			name = StepCounter;
 			productName = StepCounter;
@@ -184,6 +348,40 @@
 			productReference = 371F087E1CE0FACD006EDE77 /* StepCounterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		37AE113F1CE1ECF900E20ED1 /* StepCounter WatchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37AE11631CE1ECF900E20ED1 /* Build configuration list for PBXNativeTarget "StepCounter WatchKit" */;
+			buildPhases = (
+				37AE113E1CE1ECF900E20ED1 /* Resources */,
+				37AE11621CE1ECF900E20ED1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37AE114F1CE1ECF900E20ED1 /* PBXTargetDependency */,
+			);
+			name = "StepCounter WatchKit";
+			productName = "StepCounter WatchKit";
+			productReference = 37AE11401CE1ECF900E20ED1 /* StepCounter WatchKit.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		37AE114B1CE1ECF900E20ED1 /* StepCounter WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37AE115F1CE1ECF900E20ED1 /* Build configuration list for PBXNativeTarget "StepCounter WatchKit Extension" */;
+			buildPhases = (
+				37AE11481CE1ECF900E20ED1 /* Sources */,
+				37AE11491CE1ECF900E20ED1 /* Frameworks */,
+				37AE114A1CE1ECF900E20ED1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StepCounter WatchKit Extension";
+			productName = "StepCounter WatchKit Extension";
+			productReference = 37AE114C1CE1ECF900E20ED1 /* StepCounter WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +403,12 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 371F085B1CE0FACD006EDE77;
 					};
+					37AE113F1CE1ECF900E20ED1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					37AE114B1CE1ECF900E20ED1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = 371F08571CE0FACD006EDE77 /* Build configuration list for PBXProject "StepCounter" */;
@@ -223,6 +427,8 @@
 				371F085B1CE0FACD006EDE77 /* StepCounter */,
 				371F08721CE0FACD006EDE77 /* StepCounterTests */,
 				371F087D1CE0FACD006EDE77 /* StepCounterUITests */,
+				37AE113F1CE1ECF900E20ED1 /* StepCounter WatchKit */,
+				37AE114B1CE1ECF900E20ED1 /* StepCounter WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +441,8 @@
 				371F086D1CE0FACD006EDE77 /* LaunchScreen.storyboard in Resources */,
 				371F086A1CE0FACD006EDE77 /* Assets.xcassets in Resources */,
 				371F08651CE0FACD006EDE77 /* Main.storyboard in Resources */,
+				37AE11761CE33CD600E20ED1 /* HistoryData.plist in Resources */,
+				377D20C71CE1479100F80559 /* Walks.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +460,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37AE113E1CE1ECF900E20ED1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37AE11461CE1ECF900E20ED1 /* Assets.xcassets in Resources */,
+				37AE11441CE1ECF900E20ED1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37AE114A1CE1ECF900E20ED1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37AE115A1CE1ECF900E20ED1 /* Assets.xcassets in Resources */,
+				37AE11701CE209B100E20ED1 /* Walks.plist in Resources */,
+				37AE11771CE3513600E20ED1 /* HistoryData.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,8 +486,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37AE11741CE2374F00E20ED1 /* SessionDataXML.swift in Sources */,
+				371F08A11CE10548006EDE77 /* HistoryTableViewController.swift in Sources */,
 				371F08681CE0FACD006EDE77 /* StepCounter.xcdatamodeld in Sources */,
-				371F08621CE0FACD006EDE77 /* ViewController.swift in Sources */,
+				371F08911CE0FB08006EDE77 /* ProgressBarView.swift in Sources */,
+				371F08A31CE1070A006EDE77 /* WalkViewController.swift in Sources */,
+				377D20C61CE1479100F80559 /* Walk.swift in Sources */,
+				371F089B1CE1007E006EDE77 /* SessionData.swift in Sources */,
+				371F089F1CE10240006EDE77 /* SessionsTableViewController.swift in Sources */,
 				371F08601CE0FACD006EDE77 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +514,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37AE11481CE1ECF900E20ED1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37AE116C1CE1FF7D00E20ED1 /* PageInterfaceController.swift in Sources */,
+				37AE11791CE3548500E20ED1 /* SessionData.swift in Sources */,
+				37AE11681CE1F9F200E20ED1 /* PedometerData.swift in Sources */,
+				37AE116F1CE204AF00E20ED1 /* Calendar.swift in Sources */,
+				37AE116A1CE1FEF700E20ED1 /* WalkRowController.swift in Sources */,
+				37AE11561CE1ECF900E20ED1 /* ExtensionDelegate.swift in Sources */,
+				37AE116D1CE2001400E20ED1 /* Walk.swift in Sources */,
+				37AE11781CE3515C00E20ED1 /* SessionDataXML.swift in Sources */,
+				37AE11541CE1ECF900E20ED1 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +542,16 @@
 			isa = PBXTargetDependency;
 			target = 371F085B1CE0FACD006EDE77 /* StepCounter */;
 			targetProxy = 371F087F1CE0FACD006EDE77 /* PBXContainerItemProxy */;
+		};
+		37AE114F1CE1ECF900E20ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37AE114B1CE1ECF900E20ED1 /* StepCounter WatchKit Extension */;
+			targetProxy = 37AE114E1CE1ECF900E20ED1 /* PBXContainerItemProxy */;
+		};
+		37AE115D1CE1ECF900E20ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37AE113F1CE1ECF900E20ED1 /* StepCounter WatchKit */;
+			targetProxy = 37AE115C1CE1ECF900E20ED1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,6 +570,14 @@
 				371F086C1CE0FACD006EDE77 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		37AE11421CE1ECF900E20ED1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37AE11431CE1ECF900E20ED1 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -409,6 +676,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucasIndustries.StepCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -420,6 +688,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucasIndustries.StepCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -469,6 +738,66 @@
 			};
 			name = Release;
 		};
+		37AE11601CE1ECF900E20ED1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "StepCounter WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasIndustries.StepCounter.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		37AE11611CE1ECF900E20ED1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "StepCounter WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasIndustries.StepCounter.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		37AE11641CE1ECF900E20ED1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = StepCounter_WatchKit_Extension;
+				INFOPLIST_FILE = "StepCounter WatchKit/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasIndustries.StepCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		37AE11651CE1ECF900E20ED1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = StepCounter_WatchKit_Extension;
+				INFOPLIST_FILE = "StepCounter WatchKit/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucasIndustries.StepCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -488,6 +817,7 @@
 				371F08891CE0FACD006EDE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		371F088A1CE0FACD006EDE77 /* Build configuration list for PBXNativeTarget "StepCounterTests" */ = {
 			isa = XCConfigurationList;
@@ -496,12 +826,30 @@
 				371F088C1CE0FACD006EDE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		371F088D1CE0FACD006EDE77 /* Build configuration list for PBXNativeTarget "StepCounterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				371F088E1CE0FACD006EDE77 /* Debug */,
 				371F088F1CE0FACD006EDE77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37AE115F1CE1ECF900E20ED1 /* Build configuration list for PBXNativeTarget "StepCounter WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37AE11601CE1ECF900E20ED1 /* Debug */,
+				37AE11611CE1ECF900E20ED1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		37AE11631CE1ECF900E20ED1 /* Build configuration list for PBXNativeTarget "StepCounter WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37AE11641CE1ECF900E20ED1 /* Debug */,
+				37AE11651CE1ECF900E20ED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
