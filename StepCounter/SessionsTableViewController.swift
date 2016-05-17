@@ -171,7 +171,7 @@ class SessionsTableViewController: UITableViewController, WCSessionDelegate {
     }
     
     
-    /** Saves the data from the property list */
+    /** Saves the data from the property list. */
     func saveHistoryData(){
         
         storedHistoryPlist.addObject(history[0].convertHistoryToDict())
