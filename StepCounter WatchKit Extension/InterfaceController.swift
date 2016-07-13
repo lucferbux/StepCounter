@@ -14,6 +14,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var walkTable: WKInterfaceTable!
     
+    /** Creates a lazy reference of a Walk array, loading all the Walks of the property list Walks.plist */
     lazy var walks: [Walk] = {
         let path = NSBundle.mainBundle().pathForResource("Walks", ofType: "plist")
         let arrayOfDicts = NSArray(contentsOfFile: path!)!

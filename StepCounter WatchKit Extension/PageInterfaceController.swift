@@ -75,13 +75,13 @@ class PageInterfaceController: WKInterfaceController, WCSessionDelegate {
         totalDistanceLabel.setText(formattedString(data.distance))
 
         
-        // completions
+        /// completions
         let completions = data.totalDistance / goal
         completionsLabel.setText(formattedString(completions))
         let fraction = completions.fraction()
         progressGroup.setWidth(fraction * contentFrame.size.width)
         
-        // progress bar and messages
+        /// progress bar and messages
         let index = Walk.progressIndex(fraction)
         progressGroup.setBackgroundColor(Walk.progressColors[index])
         totalDistanceMsgLabel.setText(distanceMsgs[index])

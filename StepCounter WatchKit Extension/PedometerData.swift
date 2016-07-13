@@ -14,8 +14,7 @@ import CoreMotion
 // WatchConnectivity requires NSObject
 class PedometerData: NSObject, WCSessionDelegate {
     
-    //Variables and constants
-    // sample pedometer data
+    ///Creates an instance of CMPedometer
     let pedometer = CMPedometer()
     
     var totalSteps = 0
@@ -39,7 +38,7 @@ class PedometerData: NSObject, WCSessionDelegate {
     override init() {
         super.init()
         
-        //Create a session of WatchConectivity
+        ///Create a session of WatchConectivity
         if (WCSession.isSupported()) {
             session = WCSession.defaultSession()
             session!.delegate = self
@@ -55,19 +54,28 @@ class PedometerData: NSObject, WCSessionDelegate {
         
     }
     
-    // TODO: Change this for a session
+    /** Set the start and end of a Day and stores it in two variables */
     func setStartAndEndOfDay() {
         startOfDay = calendar.startOfToday
         endOfDay = calendar.startOfNextDay(startOfDay)
     }
     
-    // TODO: Change the live with the history
+    
     enum PedometerDataType {
         case Live
         case History
     }
     
-
+    /** 
+    Updates the data of a Walk session, there are two cases:
+    - Live: takes the total number of steps and gets the number of today steps by substacting the value of the days before.
+    - History: takes the steps from a query and add it the previous steps to get the total steps.
+     
+    In both cases they gives the distance and total distance 
+    
+    - Parameter data: The CMPedometerData
+    - Parameter ofType: The type of the Pedometer Data
+     */
     func updatePropertiesFrom(data: CMPedometerData,
                               ofType type: PedometerDataType) {
         switch type {
@@ -89,6 +97,9 @@ class PedometerData: NSObject, WCSessionDelegate {
             } }
     }
     
+    /** Start the lives updates, here the "startPedometerUpdatesFromDate(_:)" is called to 
+     query the updates from the date given until the moment is called.
+     This function checks if it is called in a new Day to stop the lives updates, query the history of the day and send it*/
     func startLiveUpdates() {
         guard CMPedometer.isStepCountingAvailable() else { return }
         pedometer.startPedometerUpdatesFromDate(appStartDate) { data,
@@ -107,6 +118,8 @@ class PedometerData: NSObject, WCSessionDelegate {
         }
     }
     
+    /** Query the history between a selected date and call other class methods to create a new log in the
+     historical data, save it and start the live updates.*/
     func queryHistoryFrom(startDate: NSDate, toDate: NSDate) {
         guard CMPedometer.isStepCountingAvailable() else { return }
         pedometer.queryPedometerDataFromDate(startDate, toDate:
@@ -126,7 +139,7 @@ class PedometerData: NSObject, WCSessionDelegate {
     
     // MARK: - Watch Connectivity
     
-    // TODO: Change to when session is finished
+    /** Send the data as a dictionary through WatchConnectivity with the flag of "saveHistory" disabled */
     func sendData(sessionEnded: Bool) {
         guard let session = session else {
             return
@@ -135,8 +148,8 @@ class PedometerData: NSObject, WCSessionDelegate {
         session.transferUserInfo(applicationDict as! [String : AnyObject])
     }
     
+    /** Send the data as a dictionary through WatchConnectivity with the flag "saveHistory" enabled and the "sessionEnded" flag disabled*/
     func sendDataHistory() {
-        
         guard let session = session else {
             return
         }
@@ -144,8 +157,8 @@ class PedometerData: NSObject, WCSessionDelegate {
         session.transferUserInfo(applicationDict as! [String : AnyObject])
     }
     
-    // MARK: - Data Persistence
     
+    /** Data persistance method that saves all the information with the NSUserDefault object*/
     func saveData() {
         NSUserDefaults.standardUserDefaults().setObject(appStartDate, forKey: "appStartDate")
         NSUserDefaults.standardUserDefaults().setObject(startOfDay, forKey: "startOfDay")
@@ -155,7 +168,8 @@ class PedometerData: NSObject, WCSessionDelegate {
     }
     
     
-    
+    /** Data persistance method that loads all the information with the NSUserDefault objects.
+     It detects a new day and call the "queriHistoryFrom(_:toDate:)" method */
     func loadSavedData() -> Bool {
         guard let savedAppStartDate = NSUserDefaults.standardUserDefaults().objectForKey("appStartDate") as? NSDate else {
             return false
