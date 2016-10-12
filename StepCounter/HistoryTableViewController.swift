@@ -15,7 +15,7 @@ class HistoryTableViewController: UITableViewController, MFMailComposeViewContro
     var distanceUnit = "km"
     let historicalData = HistoryData(name: "HistoryData")
     
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     
     @IBAction func sendHistoryData(sender: AnyObject) {
         sendEmail()
@@ -31,42 +31,42 @@ class HistoryTableViewController: UITableViewController, MFMailComposeViewContro
             mail.setToRecipients(["lucasfernandezaragon@gmail.com"])
             mail.setMessageBody("<p>The historical data!</p>", isHTML: true)
             if let fileData = historicalData?.getPlist(){
-            mail.addAttachmentData(fileData, mimeType: "xml", fileName: "historicData.xml")
+            mail.addAttachmentData(fileData as Data, mimeType: "xml", fileName: "historicData.xml")
             }
-            presentViewController(mail, animated: true, completion: nil)
+            present(mail, animated: true, completion: nil)
         } else {
             // show failure alert
         }
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.dateStyle = .LongStyle
+        dateFormatter.dateStyle = .long
     }
     
     // Table view Data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if history != nil {
             return history!.count
         }
         return 0
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath as IndexPath)
         
         if let history = history {
             let dayData = history[indexPath.row]
-            cell.textLabel!.text = dateFormatter.stringFromDate(dayData.date)
+            cell.textLabel!.text = dateFormatter.string(from: dayData.date as Date)
             let formattedString = String(format:"%.2f", dayData.distance)
             cell.detailTextLabel!.text = "\(dayData.steps) steps \(formattedString)km"
             

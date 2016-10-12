@@ -19,14 +19,14 @@ class ProgressBarView: UIView {
     override func updateConstraints() {
         super.updateConstraints()
         // move right constraint to correct length
-        let width = CGRectGetWidth(bounds)
+        let width = bounds.width
         progressBarRightConstraint.constant = (1 - fraction) * width
     }
     
     // WalkViewController calls this method
     func update(fraction: CGFloat) {
         self.fraction = fraction
-        progressBar.backgroundColor = Walk.progressColors[Walk.progressIndex(fraction)]
+        progressBar.backgroundColor = Walk.progressColors[Walk.progressIndex(fraction: fraction)]
         self.setNeedsUpdateConstraints()
     }
     

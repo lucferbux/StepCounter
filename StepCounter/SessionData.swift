@@ -29,6 +29,10 @@ final class SessionData: NSObject {
 
 //Creates an extension with the coding Keys assigned to the attributes
 extension SessionData: NSCoding {
+    public func encode(with aCoder: NSCoder) {
+        
+    }
+
     private struct CodingKeys {
         static let date = "date"
         static let steps = "steps"
@@ -39,21 +43,21 @@ extension SessionData: NSCoding {
 
 //A convenience init setting the attributes with values extracted of persistent data
     convenience init(coder aDecoder: NSCoder) {
-        let date = aDecoder.decodeObjectForKey(CodingKeys.date) as! NSDate
-        let steps = aDecoder.decodeIntegerForKey(CodingKeys.steps)
-        let distance = aDecoder.decodeDoubleForKey(CodingKeys.distance)
-        let totalSteps = aDecoder.decodeIntegerForKey(CodingKeys.totalSteps)
-        let totalDistance = aDecoder.decodeDoubleForKey(CodingKeys.totalDistance)
+        let date = aDecoder.decodeObject(forKey: CodingKeys.date) as! NSDate
+        let steps = aDecoder.decodeInteger(forKey: CodingKeys.steps)
+        let distance = aDecoder.decodeDouble(forKey: CodingKeys.distance)
+        let totalSteps = aDecoder.decodeInteger(forKey: CodingKeys.totalSteps)
+        let totalDistance = aDecoder.decodeDouble(forKey: CodingKeys.totalDistance)
         self.init(date: date, steps: steps, distance: distance, totalSteps: totalSteps, totalDistance: totalDistance)
     }
     
 
     func encodeWithCoder(encoder: NSCoder) {
-        encoder.encodeObject(date, forKey: CodingKeys.date)
-        encoder.encodeInteger(steps, forKey: CodingKeys.steps)
-        encoder.encodeDouble(distance, forKey: CodingKeys.distance)
-        encoder.encodeInteger(totalSteps, forKey: CodingKeys.totalSteps)
-        encoder.encodeDouble(totalDistance, forKey: CodingKeys.totalDistance)
+        encoder.encode(date, forKey: CodingKeys.date)
+        encoder.encode(steps, forKey: CodingKeys.steps)
+        encoder.encode(distance, forKey: CodingKeys.distance)
+        encoder.encode(totalSteps, forKey: CodingKeys.totalSteps)
+        encoder.encode(totalDistance, forKey: CodingKeys.totalDistance)
     }
   
 //This function convert a dictionary to an object, in order to get the items from the property list
@@ -67,8 +71,8 @@ extension SessionData: NSCoding {
     }
 //Function which converts a SessionData object into a Dictionary in order to store it
     func convertHistoryToDict() -> [String: AnyObject] {
-        let dictionary = ["date":self.date, "steps": self.steps, "distance": self.distance, "totalSteps": self.totalSteps, "totalDistance": self.totalDistance]
-        return dictionary
+        let dictionary = ["date":self.date, "steps": self.steps, "distance": self.distance, "totalSteps": self.totalSteps, "totalDistance": self.totalDistance] as [String : Any]
+        return dictionary as [String : AnyObject]
     }
     
 }

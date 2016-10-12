@@ -31,7 +31,7 @@ class WalkViewController: UIViewController {
 
             
             // progress bar shows color-coded progress towards the next completion
-            progressBarView.update(completions.fraction())
+            progressBarView.update(fraction: completions.fraction())
             
             walkLabel.text = walk.walkTitle
             infoTextView.text = walk.info

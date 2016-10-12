@@ -12,6 +12,12 @@ import WatchConnectivity
 
 
 class PageInterfaceController: WKInterfaceController, WCSessionDelegate {
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+
 
     
     @IBOutlet var topGroup: WKInterfaceGroup!
@@ -45,8 +51,8 @@ class PageInterfaceController: WKInterfaceController, WCSessionDelegate {
                     "Keep on keeping on...",
                     "Give it your all!"]
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         let context = context as! [AnyObject]
         walk = context[0] as! Walk
         setTitle(walk.walkTitle)
@@ -70,19 +76,19 @@ class PageInterfaceController: WKInterfaceController, WCSessionDelegate {
         let goal = CGFloat(walk.goal)
         // distanceUnit-dependant text
         totalDistanceUnitLabel.setText(data.distanceUnit)
-        goalLabel.setText(formattedString(goal) + " km")
-        distanceLabel.setText(formattedString(data.totalDistance))
-        totalDistanceLabel.setText(formattedString(data.distance))
+        goalLabel.setText(formattedString(x: goal) + " km")
+        distanceLabel.setText(formattedString(x: data.totalDistance))
+        totalDistanceLabel.setText(formattedString(x: data.distance))
 
         
         /// completions
         let completions = data.totalDistance / goal
-        completionsLabel.setText(formattedString(completions))
+        completionsLabel.setText(formattedString(x: completions))
         let fraction = completions.fraction()
         progressGroup.setWidth(fraction * contentFrame.size.width)
         
         /// progress bar and messages
-        let index = Walk.progressIndex(fraction)
+        let index = Walk.progressIndex(fraction: fraction)
         progressGroup.setBackgroundColor(Walk.progressColors[index])
         totalDistanceMsgLabel.setText(distanceMsgs[index])
         totalStepsMsgLabel.setText(stepMsgs[index])

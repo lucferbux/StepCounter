@@ -13,6 +13,12 @@ import CoreMotion
 
 // WatchConnectivity requires NSObject
 class PedometerData: NSObject, WCSessionDelegate {
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+
     
     ///Creates an instance of CMPedometer
     let pedometer = CMPedometer()
@@ -40,9 +46,9 @@ class PedometerData: NSObject, WCSessionDelegate {
         
         ///Create a session of WatchConectivity
         if (WCSession.isSupported()) {
-            session = WCSession.defaultSession()
+            session = WCSession.default()
             session!.delegate = self
-            session!.activateSession()
+            session!.activate()
         }
         
         setStartAndEndOfDay()
@@ -57,7 +63,7 @@ class PedometerData: NSObject, WCSessionDelegate {
     /** Set the start and end of a Day and stores it in two variables */
     func setStartAndEndOfDay() {
         startOfDay = calendar.startOfToday
-        endOfDay = calendar.startOfNextDay(startOfDay)
+        endOfDay = calendar.startOfNextDay(date: startOfDay)
     }
     
     
@@ -80,18 +86,18 @@ class PedometerData: NSObject, WCSessionDelegate {
                               ofType type: PedometerDataType) {
         switch type {
         case .Live:  // 1
-            totalSteps = data.numberOfSteps.integerValue
+            totalSteps = data.numberOfSteps.intValue
             steps = totalSteps - prevTotalSteps
-            if let rawDistance = data.distance?.integerValue
-                where rawDistance > 0 {
+            if let rawDistance = data.distance?.intValue
+                , rawDistance > 0 {
                 totalDistance = CGFloat(rawDistance) / 1000.0
                 distance = totalDistance - prevTotalDistance
             }
         case .History:  // 2
-            steps = data.numberOfSteps.integerValue
+            steps = data.numberOfSteps.intValue
             totalSteps = steps + prevTotalSteps
-            if let rawDistance = data.distance?.integerValue
-                where rawDistance > 0 {
+            if let rawDistance = data.distance?.intValue
+                , rawDistance > 0 {
                 distance = CGFloat(rawDistance) / 1000.0
                 totalDistance = distance + prevTotalDistance
             } }
@@ -102,18 +108,18 @@ class PedometerData: NSObject, WCSessionDelegate {
      This function checks if it is called in a new Day to stop the lives updates, query the history of the day and send it*/
     func startLiveUpdates() {
         guard CMPedometer.isStepCountingAvailable() else { return }
-        pedometer.startPedometerUpdatesFromDate(appStartDate) { data,
+        pedometer.startUpdates(from: appStartDate as Date) { data,
             error in
             if let data = data {
-                if self.calendar.isDate(data.endDate, afterDate: self.endOfDay){
-                    self.pedometer.stopPedometerUpdates()
-                    self.queryHistoryFrom(self.startOfDay, toDate: self.endOfDay)
+                if self.calendar.isDate(date1: data.endDate as NSDate, afterDate: self.endOfDay){
+                    self.pedometer.stopUpdates()
+                    self.queryHistoryFrom(startDate: self.startOfDay, toDate: self.endOfDay)
                     return
                 }
                 
                 
-                self.updatePropertiesFrom(data, ofType: .Live)
-                self.sendData(false)
+                self.updatePropertiesFrom(data: data, ofType: .Live)
+                self.sendData(sessionEnded: false)
             }
         }
     }
@@ -122,11 +128,11 @@ class PedometerData: NSObject, WCSessionDelegate {
      historical data, save it and start the live updates.*/
     func queryHistoryFrom(startDate: NSDate, toDate: NSDate) {
         guard CMPedometer.isStepCountingAvailable() else { return }
-        pedometer.queryPedometerDataFromDate(startDate, toDate:
-        toDate) { data, error in
+        pedometer.queryPedometerData(from: startDate as Date, to:
+        toDate as Date) { data, error in
             if let data = data {
-                self.updatePropertiesFrom(data, ofType: .History)
-                self.sendData(true)
+                self.updatePropertiesFrom(data: data, ofType: .History)
+                self.sendData(sessionEnded: true)
                 self.setStartAndEndOfDay()
                 self.prevTotalSteps = self.totalSteps
                 self.prevTotalDistance = self.totalDistance
@@ -144,8 +150,8 @@ class PedometerData: NSObject, WCSessionDelegate {
         guard let session = session else {
             return
         }
-        let applicationDict = ["saveHistory":false, "sessionEnded":sessionEnded, "steps":steps, "distance":distance, "totalSteps": totalSteps, "totalDistance": totalDistance]
-        session.transferUserInfo(applicationDict as! [String : AnyObject])
+        let applicationDict = ["saveHistory":false, "sessionEnded":sessionEnded, "steps":steps, "distance":distance, "totalSteps": totalSteps, "totalDistance": totalDistance] as [String : Any]
+        session.transferUserInfo(applicationDict as [String : Any])
     }
     
     /** Send the data as a dictionary through WatchConnectivity with the flag "saveHistory" enabled and the "sessionEnded" flag disabled*/
@@ -153,36 +159,36 @@ class PedometerData: NSObject, WCSessionDelegate {
         guard let session = session else {
             return
         }
-        let applicationDict = ["saveHistory":true, "sessionEnded": false, "steps":steps, "distance":distance, "totalSteps": totalSteps, "totalDistance": totalDistance]
-        session.transferUserInfo(applicationDict as! [String : AnyObject])
+        let applicationDict = ["saveHistory":true, "sessionEnded": false, "steps":steps, "distance":distance, "totalSteps": totalSteps, "totalDistance": totalDistance] as [String : Any]
+        session.transferUserInfo(applicationDict as [String : Any])
     }
     
     
     /** Data persistance method that saves all the information with the NSUserDefault object*/
     func saveData() {
-        NSUserDefaults.standardUserDefaults().setObject(appStartDate, forKey: "appStartDate")
-        NSUserDefaults.standardUserDefaults().setObject(startOfDay, forKey: "startOfDay")
-        NSUserDefaults.standardUserDefaults().setObject(endOfDay, forKey: "endOfDay")
-        NSUserDefaults.standardUserDefaults().setObject(prevTotalSteps, forKey: "prevTotalSteps")
-        NSUserDefaults.standardUserDefaults().setObject(prevTotalDistance, forKey: "prevTotalDistance")
+        UserDefaults.standard.set(appStartDate, forKey: "appStartDate")
+        UserDefaults.standard.set(startOfDay, forKey: "startOfDay")
+        UserDefaults.standard.set(endOfDay, forKey: "endOfDay")
+        UserDefaults.standard.set(prevTotalSteps, forKey: "prevTotalSteps")
+        UserDefaults.standard.set(prevTotalDistance, forKey: "prevTotalDistance")
     }
     
     
     /** Data persistance method that loads all the information with the NSUserDefault objects.
      It detects a new day and call the "queriHistoryFrom(_:toDate:)" method */
     func loadSavedData() -> Bool {
-        guard let savedAppStartDate = NSUserDefaults.standardUserDefaults().objectForKey("appStartDate") as? NSDate else {
+        guard let savedAppStartDate = UserDefaults.standard.object(forKey: "appStartDate") as? NSDate else {
             return false
         }
         appStartDate = savedAppStartDate
-        let savedStartOfDay = NSUserDefaults.standardUserDefaults().objectForKey("startOfDay") as! NSDate
-        let savedEndOfDay = NSUserDefaults.standardUserDefaults().objectForKey("endOfDay") as! NSDate
-        if calendar.isDate(calendar.now, afterDate: savedEndOfDay) {
+        let savedStartOfDay = UserDefaults.standard.object(forKey: "startOfDay") as! NSDate
+        let savedEndOfDay = UserDefaults.standard.object(forKey: "endOfDay") as! NSDate
+        if calendar.isDate(date1: calendar.now, afterDate: savedEndOfDay) {
             // query history to finalize data for missing day
-            queryHistoryFrom(savedStartOfDay, toDate: savedEndOfDay)
+            queryHistoryFrom(startDate: savedStartOfDay, toDate: savedEndOfDay)
         } else {
-            prevTotalSteps = NSUserDefaults.standardUserDefaults().objectForKey("prevTotalSteps") as! Int
-            prevTotalDistance = NSUserDefaults.standardUserDefaults().objectForKey("prevTotalDistance") as! CGFloat
+            prevTotalSteps = UserDefaults.standard.object(forKey: "prevTotalSteps") as! Int
+            prevTotalDistance = UserDefaults.standard.object(forKey: "prevTotalDistance") as! CGFloat
             startLiveUpdates()
         }
         
